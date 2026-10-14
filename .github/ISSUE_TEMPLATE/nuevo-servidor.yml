@@ -1,0 +1,49 @@
+name: Proponer un servidor MCP
+description: Añade un servidor MCP remoto al directorio sin tocar JSON
+title: "Nuevo servidor: "
+labels: ["nuevo servidor"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Gracias por proponer un servidor. Solo entran servidores **remotos** (una URL `https://` que hable MCP por HTTP), no paquetes que haya que instalar.
+  - type: input
+    id: nombre
+    attributes: { label: Nombre, placeholder: "Precios de gasolina" }
+    validations: { required: true }
+  - type: input
+    id: url
+    attributes: { label: URL del servidor MCP, placeholder: "https://mcp.ejemplo.es/mcp" }
+    validations: { required: true }
+  - type: textarea
+    id: descripcion
+    attributes: { label: Qué hace (en español, 30-400 caracteres) }
+    validations: { required: true }
+  - type: dropdown
+    id: categoria
+    attributes:
+      label: Categoría
+      options: [motor, viajes, compras, finanzas, salud, hogar, trabajo, desarrollo, informacion, ocio, administracion, otros]
+    validations: { required: true }
+  - type: dropdown
+    id: autenticacion
+    attributes:
+      label: Autenticación
+      options: ["ninguna", "cabecera (clave en una cabecera HTTP)", "oauth"]
+    validations: { required: true }
+  - type: input
+    id: cabecera
+    attributes: { label: "Si pide clave: nombre de la cabecera y dónde se consigue", placeholder: "X-API-Key — se saca en https://ejemplo.es/cuenta" }
+  - type: input
+    id: web
+    attributes: { label: Web del servicio, placeholder: "https://ejemplo.es" }
+  - type: input
+    id: logo
+    attributes: { label: "Logo (enlace a un SVG o PNG cuadrado)", placeholder: "https://ejemplo.es/logo.svg" }
+  - type: checkboxes
+    id: legal
+    attributes:
+      label: Comprobaciones
+      options:
+        - label: El servidor es público o su dueño permite listarlo aquí
+          required: true

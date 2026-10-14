@@ -1,0 +1,59 @@
+name: Comprobar y publicar
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+  schedule:
+    - cron: "17 6 * * 1"   # cada lunes: ¿siguen respondiendo?
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: comprobar-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  comprobar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with: { fetch-depth: 0 }
+      - uses: actions/setup-go@v5
+        with: { go-version: "1.24" }
+      - name: Fichas cambiadas en el pull request
+        if: github.event_name == 'pull_request'
+        run: |
+          git diff --name-only --diff-filter=AM origin/${{ github.base_ref }}...HEAD -- 'servidores/*.json' > cambiadas.txt
+          cat cambiadas.txt
+      - name: Validar todas y probar las cambiadas
+        if: github.event_name == 'pull_request'
+        run: |
+          go run ./cmd/comprobar
+          if [ -s cambiadas.txt ]; then go run ./cmd/comprobar -probar $(cat cambiadas.txt); fi
+      - name: Probar todas y generar el índice
+        if: github.event_name != 'pull_request'
+        run: |
+          go run ./cmd/comprobar -probar -indice publicar/index.json || true
+          test -s publicar/index.json
+          cp -r logos assets publicar/
+          cp web/index.html publicar/
+      - uses: actions/upload-pages-artifact@v3
+        if: github.event_name != 'pull_request'
+        with: { path: publicar }
+
+  publicar:
+    if: github.event_name != 'pull_request'
+    needs: comprobar
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.despliegue.outputs.page_url }}
+    steps:
+      - id: despliegue
+        uses: actions/deploy-pages@v4

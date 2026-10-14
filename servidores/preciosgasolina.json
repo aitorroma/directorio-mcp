@@ -1,0 +1,11 @@
+{
+  "nombre": "Precios de gasolina",
+  "url": "https://mcp.preciosgasolina.es/mcp",
+  "descripcion": "Precios oficiales de unas 11.500 gasolineras de España (Ministerio para la Transición Ecológica), actualizados dos veces al día: la más barata cerca de un punto, en una carretera o a lo largo de una ruta, medias por provincia y marca, histórico y coste de un viaje.",
+  "categoria": "motor",
+  "etiquetas": ["gasolina", "diésel", "gasolineras", "precios", "viajes"],
+  "autenticacion": "ninguna",
+  "web": "https://preciosgasolina.es/desarrolladores/mcp/",
+  "idiomas": ["es", "en"],
+  "pais": "ES"
+}

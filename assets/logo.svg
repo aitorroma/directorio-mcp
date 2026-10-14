@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="Directorio MCP">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ff7a45"/>
+      <stop offset="1" stop-color="#e2643b"/>
+    </linearGradient>
+  </defs>
+  <rect width="128" height="128" rx="28" fill="url(#g)"/>
+  <g fill="none" stroke="#fff" stroke-width="7" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M38 40h52M38 64h52M38 88h30"/>
+  </g>
+  <g fill="#fff">
+    <circle cx="94" cy="88" r="13"/>
+  </g>
+  <path d="M88 88l4 4 8-9" fill="none" stroke="#e2643b" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
