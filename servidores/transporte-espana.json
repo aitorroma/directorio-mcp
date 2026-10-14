@@ -1,0 +1,11 @@
+{
+  "nombre": "Transporte público España",
+  "url": "https://mcp.nimboxtunnel.xyz/mcp",
+  "descripcion": "Horarios de transporte público de España con datos abiertos: próximas salidas de Renfe (AVE, Larga y Media Distancia, Regionales, Cercanías y Rodalies) con retrasos en tiempo real, FGC y los autobuses de Autocars Gamón en Lleida (líneas por pueblo y horarios).",
+  "categoria": "viajes",
+  "etiquetas": ["trenes", "Renfe", "Rodalies", "Cercanías", "FGC", "autobuses", "Lleida", "horarios"],
+  "autenticacion": "ninguna",
+  "web": "https://mcp.nimboxtunnel.xyz/",
+  "idiomas": ["es"],
+  "pais": "ES"
+}
