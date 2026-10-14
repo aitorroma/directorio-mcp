@@ -1,0 +1,11 @@
+{
+  "nombre": "Normativa de drones (España)",
+  "url": "https://mcp.aerset.com/mcp",
+  "descripcion": "La normativa española de drones con su fuente y fecha: busca en el BOE, el Reglamento (UE) 2019/947 y las guías de AESA, calcula qué trámites hacen falta para volar en un punto y una fecha, muestra las zonas UAS de ENAIRE y lugares de vuelo cercanos.",
+  "categoria": "ocio",
+  "etiquetas": ["drones", "AESA", "ENAIRE", "normativa", "BOE"],
+  "autenticacion": "ninguna",
+  "web": "https://aerset.com/",
+  "idiomas": ["es"],
+  "pais": "ES"
+}

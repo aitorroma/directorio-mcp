@@ -1,0 +1,10 @@
+{
+  "nombre": "DeepWiki",
+  "url": "https://mcp.deepwiki.com/mcp",
+  "descripcion": "Documentación generada de cualquier repositorio público de GitHub: lista sus temas, lee sus páginas y responde preguntas sobre su código. Útil para entender una librería o un proyecto antes de usarlo.",
+  "categoria": "desarrollo",
+  "etiquetas": ["github", "documentación", "código", "repositorios"],
+  "autenticacion": "ninguna",
+  "web": "https://deepwiki.com/",
+  "idiomas": ["en"]
+}
